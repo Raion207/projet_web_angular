@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{'lbl-update' |translate}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group" >
+      <label>{{'lbl-task-name' |translate}}</label>
+      <input type="text" class="form-control" [(ngModel)]="currentTask.name">
+    </div>
+    <div class="mb-3">
+      <label for="dateExpiration" class="form-label">Date d'échéance</label>
+      <input type="date" class="form-control" id="dateExpiration" [(ngModel)]="currentTask.dateExpiration" required>
+    </div>
+    <div class="form-group">
+      <label>{{'lbl-state' |translate}}</label>
+      <ng-select
+        bindLabel="name"
+        autofocus
+        [items]="TaskStates" [(ngModel)]="currentTask.state"></ng-select>
+    </div>
+    <div class="form-group">
+      <label>{{'lbl-project' |translate}}</label>
+      <ng-select
+        bindLabel="title"
+        autofocus
+        [items]="listOfProjects" [(ngModel)]="currentTask.project"></ng-select>
+    </div>
+    <div class="form-group">
+      <label>Tags</label>
+      <ng-select
+        [multiple]="true"
+        bindLabel="name"
+        autofocus
+        [items]="listOfTags" [(ngModel)]="currentTask.tags"></ng-select>
+    </div>
+    <div class="form-group">
+      <label>Sous tâches</label>
+      <ng-select
+        [multiple]="true"
+        bindLabel="name"
+        autofocus
+        [items]="listOfTasks" [(ngModel)]="currentTask.subTasks"></ng-select>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="onValidateUpdate()">{{'lbl-to-validate' |translate}}</button>
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">{{'lbl-close' |translate}}</button>
+  </div>
+  
