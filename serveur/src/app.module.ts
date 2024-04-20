@@ -11,7 +11,7 @@ import { mailerModule } from './mailer/mailer.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://emeric:mlpMiZxCJbIslqsw@cluster0.nk5mxz2.mongodb.net/todo_list'),
+    MongooseModule.forRoot('mongodb+srv://marcang:xvkaUN7UH5lOzQ1J@todolist.hu36rab.mongodb.net/?retryWrites=true&w=majority&appName=todolist'),
     TasksModule,
     UsersModule,
     ProjectsModule,
